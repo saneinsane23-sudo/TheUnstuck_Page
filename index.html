@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Unstuck</title>
+  <meta name="description" content="Small, real steps to get moving again, taken together. Mental health, physical health and the everyday feeling of being stuck.">
+  <meta name="theme-color" content="#FF6B4A">
+
+  <!-- Link previews (WhatsApp, iMessage, LinkedIn, X) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="The Unstuck: feeling stuck? Same.">
+  <meta property="og:description" content="Small, real steps to get moving again, taken together.">
+  <meta property="og:url" content="https://saneinsane23-sudo.github.io/TheUnstuck_Page/">
+  <meta property="og:image" content="https://saneinsane23-sudo.github.io/TheUnstuck_Page/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* Brand palette: brand/BRAND.md > Colours */
+    :root {
+      --coral: #FF6B4A;
+      --white: #FFF7EE;
+      --ink: #1E1B18;
+      --sun: #FFD66B;
+      --stone: #7A6F66;
+      --max: 1040px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", sans-serif;
+      background: var(--white);
+      color: var(--ink);
+      line-height: 1.6;
+      font-size: 17px;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+    .chev { color: var(--coral); }
+    .label {
+      font-size: 13px; font-weight: 700; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--stone);
+    }
+
+    /* Header */
+    header { padding: 22px 0; }
+    header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .wordmark { font-weight: 800; letter-spacing: .08em; font-size: 15px; text-decoration: none; }
+    .nav-ig { font-weight: 600; font-size: 14px; text-decoration: none; border-bottom: 2px solid var(--coral); }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-weight: 700; font-size: 16px; text-decoration: none;
+      padding: 16px 26px; border-radius: 999px; border: 0; cursor: pointer;
+      background: var(--ink); color: var(--white);
+      transition: transform .15s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn.light { background: var(--white); color: var(--ink); }
+    .btn .chev { font-weight: 800; }
+    .btn.light .chev { color: var(--coral); }
+
+    /* Hero */
+    .hero { background: var(--coral); padding: 64px 0 72px; }
+    .hero .label { color: var(--ink); opacity: .75; }
+    .hero h1 {
+      font-weight: 800; text-transform: uppercase; line-height: 1.02;
+      font-size: clamp(44px, 12vw, 104px); letter-spacing: -.01em;
+      margin: 14px 0 22px;
+    }
+    .hero h1 .chev { color: var(--white); }
+    .hero p.lead { font-size: clamp(18px, 2.6vw, 22px); max-width: 34ch; margin-bottom: 32px; }
+    .bar { width: 64px; height: 8px; border-radius: 8px; background: var(--ink); margin-bottom: 24px; }
+
+    section { padding: 72px 0; }
+    h2 {
+      font-weight: 800; font-size: clamp(30px, 6vw, 46px); line-height: 1.1;
+      margin: 10px 0 18px; max-width: 20ch;
+    }
+    h2 em { font-style: normal; color: var(--coral); }
+    .intro { max-width: 60ch; font-size: 18px; }
+
+    /* Pillars */
+    .grid { display: grid; gap: 16px; margin-top: 36px; }
+    @media (min-width: 760px) { .grid.three { grid-template-columns: repeat(3, 1fr); } }
+    .card {
+      background: #fff; border-radius: 22px; padding: 28px 26px;
+      box-shadow: 0 1px 0 rgba(30,27,24,.06);
+    }
+    .card .num { font-weight: 800; font-size: 14px; color: var(--coral); letter-spacing: .1em; }
+    .card h3 { font-weight: 700; font-size: 21px; line-height: 1.25; margin: 10px 0 8px; }
+    .card p { color: #4a443f; font-size: 16px; }
+
+    /* Evolving together */
+    .together { background: var(--sun); }
+    .together .label { color: var(--ink); opacity: .7; }
+    .together ul { list-style: none; margin-top: 28px; display: grid; gap: 14px; max-width: 62ch; }
+    .together li { display: flex; gap: 14px; font-size: 18px; }
+    .together li::before { content: ">"; font-weight: 800; color: var(--coral); }
+
+    /* Sub-brands */
+    .brands { display: grid; gap: 16px; margin-top: 36px; }
+    @media (min-width: 760px) { .brands { grid-template-columns: 1.4fr 1fr; } }
+    .brand-live {
+      background: var(--ink); color: var(--white); border-radius: 26px; padding: 34px 30px;
+      display: flex; flex-direction: column; gap: 14px;
+    }
+    .brand-live .label { color: var(--sun); }
+    .brand-live .name { font-weight: 800; letter-spacing: .06em; font-size: 22px; line-height: 1.25; }
+    .brand-live .name small { display: block; font-weight: 600; letter-spacing: .12em; font-size: 15px; opacity: .8; }
+    .brand-live p { opacity: .85; }
+    .brand-live .btn { align-self: flex-start; margin-top: 8px; }
+    .brand-soon {
+      border: 2px dashed rgba(30,27,24,.2); border-radius: 26px; padding: 34px 30px;
+      display: flex; flex-direction: column; gap: 12px; justify-content: center;
+    }
+    .brand-soon .name { font-weight: 700; font-size: 18px; }
+    .brand-soon p { color: var(--stone); font-size: 15px; }
+
+    /* Signup */
+    .signup { background: var(--ink); color: var(--white); border-radius: 30px; padding: 44px 30px; }
+    .signup .label { color: var(--sun); }
+    .signup h2 { max-width: 18ch; }
+    .signup h2 em { color: var(--coral); }
+    .signup p { opacity: .85; max-width: 52ch; margin-bottom: 26px; }
+    .signup form { display: flex; flex-wrap: wrap; gap: 12px; }
+    .signup input {
+      flex: 1 1 240px; font: inherit; font-size: 16px; padding: 16px 22px;
+      border-radius: 999px; border: 0; background: var(--white); color: var(--ink);
+    }
+    .signup .btn { background: var(--coral); color: var(--ink); }
+    .signup .note { font-size: 14px; opacity: .7; margin-top: 16px; }
+    .signup .msg { margin-top: 16px; font-weight: 600; color: var(--sun); display: none; }
+    .signup .msg a { color: var(--sun); }
+
+    footer { padding: 48px 0 56px; color: var(--stone); font-size: 14px; }
+    footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+    footer .wordmark { color: var(--ink); }
+
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn { transition: none; } }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="wrap">
+      <a class="wordmark" href="#">THE UNSTUCK<span class="chev">&gt;</span></a>
+      <a class="nav-ig" href="https://www.instagram.com/theunstuckmillennial/" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div class="wrap">
+        <div class="label">The Unstuck</div>
+        <h1>Feeling stuck?<br>Same<span class="chev">&gt;</span></h1>
+        <div class="bar"></div>
+        <p class="lead">Small, real steps to get moving again, taken together. No gurus, no toxic positivity.</p>
+        <a class="btn" href="#join">Get the free reset <span class="chev">&gt;</span></a>
+      </div>
+    </div>
+
+    <section>
+      <div class="wrap">
+        <div class="label">What this is</div>
+        <h2>For the tired, the behind and the <em>stuck on repeat</em></h2>
+        <p class="intro">The Unstuck is about your personal life, not your job title: mental health, physical health, burnout, stalled plans, money stress and decision fatigue. Every week we try one small thing, share what happened, and keep going.</p>
+
+        <div class="grid three">
+          <div class="card">
+            <div class="num">01 &gt;</div>
+            <h3>Micro-habits and systems</h3>
+            <p>Tiny, low-friction actions for sleep, movement, food and focus that build momentum on low-energy days.</p>
+          </div>
+          <div class="card">
+            <div class="num">02 &gt;</div>
+            <h3>Mind and body</h3>
+            <p>Burnout, low energy, perfectionism and imposter syndrome, talked about honestly.</p>
+          </div>
+          <div class="card">
+            <div class="num">03 &gt;</div>
+            <h3>Life pivots and growth</h3>
+            <p>Boundaries, relationships, focus and big decisions, broken down into the next real step.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="together">
+      <div class="wrap">
+        <div class="label">Evolving together</div>
+        <h2>I'm not ahead of you. I'm right here with you.</h2>
+        <p class="intro">I'm a real millennial on the same journey. I share my own experiments, real numbers and bad weeks, and your stories shape what comes next.</p>
+        <ul>
+          <li>I try things first and tell you how it actually went.</li>
+          <li>We say "we", not "you should".</li>
+          <li>Your questions and wins become posts (with your permission).</li>
+          <li>Progress over perfection, one small step at a time.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="label">Communities</div>
+        <h2>One brand. <em>Every</em> stage of life.</h2>
+        <p class="intro">The Unstuck grows one community at a time, each speaking from inside its own life stage.</p>
+
+        <div class="brands">
+          <div class="brand-live">
+            <div class="label">Live now</div>
+            <div class="name">THE UNSTUCK<span class="chev">&gt;</span><small>MILLENNIAL</small></div>
+            <p>For millennials in quarter- or mid-life transitions who feel behind on milestones or trapped in the same loop.</p>
+            <a class="btn light" href="https://www.instagram.com/theunstuckmillennial/" target="_blank" rel="noopener">Follow @theunstuckmillennial <span class="chev">&gt;</span></a>
+          </div>
+          <div class="brand-soon">
+            <div class="label">Coming later</div>
+            <div class="name">More Unstuck communities</div>
+            <p>New audiences will join as we learn what helps. Follow along to hear first.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="join">
+      <div class="wrap">
+        <div class="signup">
+          <div class="label">Free starter resource</div>
+          <h2>The 5-Minute <em>Unstuck</em> Reset</h2>
+          <p>A one-page checklist for the days when everything feels like too much. Five small steps, five minutes, no willpower required.</p>
+          <form id="signup-form" novalidate>
+            <input type="email" name="email" placeholder="Your email" aria-label="Your email" required>
+            <button class="btn" type="submit">Send it to me <span class="chev">&gt;</span></button>
+          </form>
+          <p class="msg" id="signup-msg">The checklist isn't out yet. Follow <a href="https://www.instagram.com/theunstuckmillennial/" target="_blank" rel="noopener">@theunstuckmillennial</a> and you'll be the first to get it.</p>
+          <p class="note">Launching soon. One email when it's ready, no spam.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span class="wordmark">THE UNSTUCK<span class="chev">&gt;</span></span>
+      <span>Peer support, not medical advice. If you're struggling, please talk to a professional.</span>
+    </div>
+  </footer>
+
+  <script>
+    // Placeholder until an email tool (Beehiiv, Kit, MailerLite...) is connected.
+    // Nothing is stored or sent: swap this form for the tool's embed code.
+    document.getElementById('signup-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      document.getElementById('signup-msg').style.display = 'block';
+    });
+  </script>
+</body>
+</html>
